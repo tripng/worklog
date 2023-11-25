@@ -1,0 +1,37 @@
+/* * --------------------------------------------------  */
+:root {
+    --purple-c: #7c5af6;
+    --light-purple-c: #9475f4;
+    --silver-c: #bebebe;
+    --light-c: #f0f0f0;
+}
+a {
+    text-decoration: none;
+}
+
+/* LOGIN --------------------------------------------------  */
+.login-page {
+    margin-top: 100px;
+}
+
+/* NAVBAR--------------------------------------------------  */
+.navbar {
+    height: 65px;
+}
+.navbar-brand {
+    color: var(--purple-c);
+}
+.nav-link {
+    color: var(--silver-c);
+}
+.navbar-nav .nav-item .nav-link.active {
+    color: var(--purple-c);
+}
+
+/* CARD --------------------------------------------------  */
+.card {
+    background-color: var(--light-c);
+}
+.card:hover {
+    background-color: var(--silver-c);
+}

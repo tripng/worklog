@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\WorkLogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/login','pages.login');
 
+Route::resource('worklog',WorkLogController::class);
 Route::controller(LoginController::class)->group(function(){
     Route::post('authentication','authentication')->name('login');
 });
 Route::controller(LogController::class)->group(function(){
-    Route::get('worklogs','worklog');
+    Route::get('worklogs','worklog')->name('page.worklog');
 });
+
 Route::get('dashboard',DashboardController::class);

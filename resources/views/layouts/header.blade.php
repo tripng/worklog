@@ -9,10 +9,12 @@
             <div class="collapse navbar-collapse ms-5" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Dashboard</a>
+                        <a @class([ 'nav-link' , 'active'=>request()->is('dashboard')]) aria-current="page"
+                            href="{{url('dashboard')}}">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url('worklogs')}}">Worklogs</a>
+                        <a @class([ 'nav-link' , 'active'=>request()->is('worklogs')])
+                            href="{{url('worklogs')}}">Worklogs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Pricing</a>

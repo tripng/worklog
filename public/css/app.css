@@ -29,9 +29,48 @@ a {
 }
 
 /* CARD --------------------------------------------------  */
+#add-worklog {
+    /* background: var(--light-purple-c); */
+}
+#add-worklog:hover {
+    background-color: var(--light-purple-c);
+}
 .card {
     background-color: var(--light-c);
 }
-.card:hover {
-    background-color: var(--silver-c);
+.card-log:hover {
+    background-color: var(--light-purple-c);
+}
+.card-log:hover .card-city {
+    color: var(--light-c);
+}
+#addWorklogLabel {
+    color: var(--purple-c);
+}
+.card-city {
+    color: var(--purple-c);
+}
+#total-work {
+    color: var(--purple-c);
+}
+
+/* MODAL --------------------------------------------------  */
+.btn-add {
+    background-color: var(--purple-c);
+}
+.btn-add:hover {
+    background-color: var(--light-purple-c);
+}
+
+/* CARD Dashboard --------------------------------------------------  */
+#title-card-dashboard {
+    color: var(--purple-c);
+}
+.card .separator {
+    display: inline-block;
+    transform: translateY(8px);
+}
+.card .number {
+    display: inline-block;
+    transform: translateY(16px);
 }

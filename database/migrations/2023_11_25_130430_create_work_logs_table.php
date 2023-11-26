@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('work_logs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->string('date');
+            $table->string('start_time');
+            $table->string('end_time');
+            $table->bigInteger('total_time');
+            $table->string('city');
             $table->timestamps();
         });
     }

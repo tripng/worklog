@@ -1,3 +1,3 @@
 <div>
-    <h2 class="text-center my-5">{{$heading}}</h2>
+    <h2 class="text-center mt-4">{{$heading}}</h2>
 </div>

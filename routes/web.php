@@ -16,15 +16,20 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::view('/login','pages.login');
-
-Route::resource('worklog',WorkLogController::class);
-Route::controller(LoginController::class)->group(function(){
-    Route::post('authentication','authentication')->name('login');
+Route::middleware('guest')->group(function(){
+    Route::get('/',function(){
+        return redirect()->route('page-login');
+    });
+    Route::controller(LoginController::class)->group(function(){
+        Route::post('authentication','authentication')->name('login');
+    });
+    Route::view('/login','pages.login')->name('page-login');
 });
-Route::controller(LogController::class)->group(function(){
-    Route::get('worklogs','worklog')->name('page.worklog');
+Route::middleware('auth')->group(function(){
+    Route::resource('worklog',WorkLogController::class);
+    Route::controller(LogController::class)->group(function(){
+        Route::get('worklogs','worklog')->name('page.worklog');
+    });
+    Route::post('logout',[LoginController::class,'logout'])->name('do-logout');
+    Route::get('dashboard',DashboardController::class);
 });
-
-Route::get('dashboard',DashboardController::class);

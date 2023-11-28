@@ -16,11 +16,12 @@
                         <a @class([ 'nav-link' , 'active'=>request()->is('worklogs')])
                             href="{{url('worklogs')}}">Worklogs</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
                 </ul>
             </div>
+            <form action="{{route('do-logout')}}" method="POST">
+                @csrf
+                <button class="btn">Logout</button>
+            </form>
         </div>
     </nav>
 </header>
